@@ -2,56 +2,56 @@ const express = require('express');
 const router = express.Router();
 const db = require('../bin/db');
 
-/* GET users listing. */
+/* GET posts listing. */
 router.get('/', (req, res, next) => {
-  const query = 'SELECT * FROM users';
+  const query = 'SELECT * FROM posts';
 
   db.get().query(query, (err, result) => {
     if (err) { return next(err); }
     res.status('200').send({
-      users : result
+      posts : result
     });
   });
 });
 
-/* GET user by ID. */
+/* GET post by ID. */
 router.get('/:id', (req, res, next) => {
-  const query = 'SELECT * FROM users WHERE id = ?';
+  const query = 'SELECT * FROM posts WHERE id = ?';
 
   db.get().query(query, [req.params.id], (err, result) => {
     if (err) { return next(err); }
     res.status('200').send({
-      user : result
+      post : result
     });
   });
 });
 
-/* CREATE user */
-router.post('/', (req, res, next) => {
-  const query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+/* PUT new post. */
+router.put('/', (req, res, next) => {
+  const query = "INSERT INTO posts (user, text) VALUES (?, ?)";
   const body = req.body;
 
-  db.get().query(query, [body.username, body.email, body.password], (err, result) => {
+  db.get().query(query, [body.user, body.text], (err, result) => {
     if (err) { return next(err); }
     res.status('200').send(result.affectedRows + " record(s) updated");
   });
 });
 
-/* UPDATE user by ID. */
-router.put('/:id', (req, res, next) => {
-  const query = 'UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?';
+/* UPDATE post by ID. */
+router.post('/:id', (req, res, next) => {
+  const query = 'UPDATE post SET text = ? WHERE id = ?';
   const id = req.params.id;
   const body = req.body;
 
-  db.get().query(query, [body.username, body.email, body.password, id], (err, result) => {
+  db.get().query(query, [body.text, id], (err, result) => {
     if (err) { return next(err); }
     res.status('200').send(result.affectedRows + " record(s) updated");
   });
 });
 
-/* DELETE user by ID. */
+/* DELETE post by ID. */
 router.delete('/:id', (req, res, next) => {
-  const query = "DELETE FROM users WHERE id = ?";
+  const query = "DELETE FROM posts WHERE id = ?";
 
   db.get().query(query, [req.params.id], (err, result) => {
     if (err) { return next(err); }
