@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './App.scss';
 
-import { Menu, Segment } from 'semantic-ui-react'
-
-import Home from './components/Home/Home';
+import { Menu, Segment, Grid} from 'semantic-ui-react'
+import Invitations from './components/Invitations/Invitations';
 
 class App extends Component {
   state = { activeItem: 'home' }
@@ -15,8 +14,8 @@ class App extends Component {
     const { activeItem } = this.state
 
     return (
-      <div className="App">
-        <Menu pointing secondary>
+      <div className="app">
+        <Menu pointing secondary className="app__menu">
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
           <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} />
@@ -25,10 +24,19 @@ class App extends Component {
           </Menu.Menu>
         </Menu>
 
-        <Segment>
-          My Segment
-        </Segment>
-        <Home></Home>
+        <Grid columns={3} divided>
+          <Grid.Row>
+            <Grid.Column>
+              <Invitations></Invitations>
+            </Grid.Column>
+            <Grid.Column>
+              <Invitations></Invitations>
+            </Grid.Column>
+            <Grid.Column>
+              <Invitations></Invitations>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }
