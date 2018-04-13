@@ -1,0 +1,36 @@
+/********************************
+            VARIABLES
+ ********************************/
+
+// COLORS
+// --------------------------------------------------
+
+$color-dark-grey: #4A4A4A;
+$color-medium-grey: #9B9B9B;
+$color-light-grey: #DADADA;
+$color-light-grey-bg: #F8F8F8;
+$color-blue: #64B5E5;
+$color-green: #B8E986;
+$color-orange: #F4BC5F;
+$color-red: #EE6F4D;
+
+$linear-blue: linear-gradient(270deg, #7DCDEE 0%, #5AACDC 100%);
+$linear-green: linear-gradient(270deg, #cae9ac 0%, #B8E986 100%);
+$linear-orange: linear-gradient(270deg, #f4cc81 0%, #F4BC5F 100%);
+$linear-red: linear-gradient(270deg, #ee8872 0%, #EE6F4D 100%);
+
+// FONTS
+// --------------------------------------------------
+
+$base-font-size: 50%;
+$primary-font: 'montserrat_regular', sans-serif;
+$primary-font--bold: 'montserrat_bold', sans-serif;
+$primary-font--semi-bold: 'montserrat_semibold', sans-serif;
+$primary-font--medium: 'montserrat_medium', sans-serif;
+$primary-font--light: 'montserrat_light', sans-serif;
+
+$secondary-font: 'roboto_regular', sans-serif;
+$secondary-font--bold: 'roboto_bold', sans-serif;
+$secondary-font--medium: 'roboto_medium', sans-serif;
+$secondary-font--light: 'roboto_light', sans-serif;
+

@@ -1,0 +1,29 @@
+@import './sass/main.scss';
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: $primary-font;
+  overflow: hidden;
+}
+
+html, body {
+  @include custom-scroll-bar();
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+a {
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+p {
+  margin: 0;
+}
