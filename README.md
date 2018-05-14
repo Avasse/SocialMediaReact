@@ -32,3 +32,7 @@ Documentation
 * Modification de l'architecture et de la configuration Webpack afin d'utiliser SASS.
 * Installation et importation de la librairie graphique Semantic UI pour React (see: https://react.semantic-ui.com)
 
+* Création du composant Invitations permettant de suggèrer de nouveaux amis à l'utilisateur.
+* Creation du Store Redux pour consommer les données de notre API.
+* Installation du logger permettant de suivre les actions du store.
+* Création du composant PostsList permettant d'afficher la liste des posts.
