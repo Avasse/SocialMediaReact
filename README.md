@@ -6,15 +6,19 @@ Installation
 
 ```
 install and run Express API.
+cd ./ExpressAPI
+npm install
+npm start
 ```
 ```
 install and run React app.
+cd ./social-media-react
+npm install
+npm start
 ```
 
 Your server is now running on http://localhost:3000/
 Your app is now running on http://localhost:8080/
-
-Please visit :
 
 Documentation
 ============
